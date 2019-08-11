@@ -13,11 +13,13 @@ export class Core extends PIXI.Container {
     const sprite1 = new PIXI.Sprite(PIXI.Texture.fromImage("Layer_0"));
     this.addChild(this.layers.standart);
     this.addChild(this.layers.LayerAMiddle);
+    sprite1.y = sprite.height;
     this.addChild(this.layers.LayerBMiddle);
 
-    this.layers.LayerAMiddle.addChild(sprite);
-    this.layers.LayerBMiddle.addChild(sprite1);
-    this.layers.LayerBMiddle.y = this.layers.LayerAMiddle.height;
+    this.layers.standart.addChild(sprite);
+    this.layers.standart.addChild(sprite1);
+    this.layers.LayerBMiddle.y = sprite.height;
+
     this.parseJSON();
   }
 
